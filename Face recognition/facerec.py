@@ -1,6 +1,6 @@
 import cv2
-faceCascade = cv2.CascadeClassifier("Resources\opencv-master\data\lbpcascades\lbpcascade_frontalface_improved.xml")
-silverwareCascade = cv2.CascadeClassifier("Resources\opencv-master\data\lbpcascades\lbpcascade_silverware.xml")
+faceCascade = cv2.CascadeClassifier("Resources\lbpcascade_frontalface_improved.xml")
+
 
 cap = cv2.VideoCapture(1)
 while True:
@@ -15,10 +15,7 @@ while True:
         cv2.rectangle(img, (x, y), (x + w, y + h), (0, 255, 0), 2)
         cv2.putText(img, "Face", (x + (w // 2) - 10, (y + (h // 2)) - 10), cv2.FONT_HERSHEY_SIMPLEX, 0.5,
                     (0, 255, 0), 2)
-    for (x,y,w,h) in profiles:
-        cv2.rectangle(img, (x, y), (x + w, y + h), (0, 0, 255), 2)
-        cv2.putText(img, "silverware", (x + (w // 2) - 10, (y + (h // 2)) - 10), cv2.FONT_HERSHEY_SIMPLEX, 0.5,
-                    (0, 255, 0), 2)
+   
 
 
     cv2.imshow("face",img)
